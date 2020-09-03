@@ -1,0 +1,48 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="text">
+
+    <!-- calls the submit function on button click -->
+    <button onclick="submit()">submit</button>
+    
+    <script>
+    	//declare function
+        function submit(){
+        	//get input value using the HTML attribute id
+            var input = document.getElementById("text").value
+
+            //split the value into an array of strings
+            var b = input.split("")
+            
+            //declare an empty array of results
+            var result=[]
+            //store consonants in an array
+            var consonants=["b","c","d","f","g","h","j","k","l","m","n","p","q","r","s","t","v","w","x","y","z"]
+            
+            //loop through the array of strings
+            for(var i= 0; i<b.length; i++){
+            	//check if each string of the array is a consonant
+                if(consonants.includes(b[i])){
+                	//if string is a consonant, get the index of the string in the consonants
+                    var d = consonants.indexOf(b[i])
+                    //push the value of the index+1 to the result array
+                    result.push(consonants[d+1])
+                }
+                else{
+                	//if string is not consonant, push the string to the result array
+                    result.push(b[i])
+                }
+            }
+            //joins the result array as string
+            result = result.join("")
+            //displays the desired output in the console
+            console.log(result)
+        }
+    </script>
+</body>
+</html>
